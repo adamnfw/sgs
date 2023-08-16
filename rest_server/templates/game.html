@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading Game</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <script src="/static/js/game.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- This hidden input field will store the token for the user -->
+        <input type="hidden" id="userToken" />
+
+        <div class="section">
+            <input type="number" id="bid" placeholder="Enter bid value" style="width: 48%;" />
+            <input type="number" id="ask" placeholder="Enter ask value" style="width: 48%;" />
+        </div>
+
+        <div class="quote-button-section">
+            <button id="quoteButton" class="quote-button">Quote</button>
+        </div>
+
+        <div class="top-of-book">
+            <div>
+                <label>BidQty</label>
+                <input type="text" id="num_bids" class="read-only" readonly />
+            </div>
+            <div>
+                <label>BidPrc</label>
+                <input type="text" id="best_bid" class="read-only" readonly />
+            </div>
+            <div>
+                <label>AskPrc</label>
+                <input type="text" id="best_ask" class="read-only" readonly />
+            </div>
+            <div>
+                <label>AskQty</label>
+                <input type="text" id="num_asks" class="read-only" readonly />
+            </div>
+        </div>
+
+        <div class="status">
+            <input type="text" id="status" class="read-only" readonly />
+        </div>
+    </div>
+</body>
+</html>

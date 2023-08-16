@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trades</title>
+    <!-- Include the DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.dataTables.min.css') }}" -->
+</head>
+<body>
+    <div class="container">
+        <table id="tradeTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Buyer</th>
+                    <th>Seller</th>
+                    <th>Price</th>
+                    <th>Sequence</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in trades %}
+                <tr>
+                    <td>{{ trade.buyer }}</td>
+                    <td>{{ trade.seller }}</td>
+                    <td>{{ trade.price }}</td>
+                    <td>{{ trade.sequence }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Include the jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+
+    <!-- Initialize the DataTable -->
+    <script>
+        $(document).ready(function() {
+            $('#tradeTable').DataTable();
+        });
+    </script>
+</body>
+</html>

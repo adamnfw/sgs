@@ -1,0 +1,49 @@
+.container {
+    width: 300px;
+    padding-top: 50px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.quote-button-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.button {
+    width: 48%;
+}
+
+.quote-button {
+    width: 100%;
+}
+
+.read-only {
+    border: none;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.top-of-book {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-top: 50px;
+}
+
+.top-of-book > div {
+    width: 22%;
+    padding: 0;
+    margin: 0;
+}
+
+.status {
+    margin-top: 15px;
+    text-align: right;
+}

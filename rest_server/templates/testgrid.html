@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Grid</title>
+    <!-- Include the DataTables CSS -->
+    <!-- link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.dataTables.min.css') }}" -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dataTables.bootstrap5.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <table id="tradeTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Buyer</th>
+                    <th>Seller</th>
+                    <th>Price</th>
+                    <th>Sequence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>timmy45993</td>
+                    <td>timmy31691</td>
+                    <td>11</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>timmy12345</td>
+                    <td>timmy67890</td>
+                    <td>15</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>timmy98765</td>
+                    <td>timmy54321</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Include the jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+    <!-- script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script -->
+    <!-- script src="{{ url_for('static', filename='js/dataTables.bootstrap5.min.js') }}"></script -->
+
+    <!-- Initialize the DataTable -->
+    <script>
+        $(document).ready(function() {
+            $('#tradeTable').DataTable();
+        });
+    </script>
+</body>
+</html>

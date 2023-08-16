@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Book</title>
+    <!-- Include the DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dataTables.bootstrap5.min.css') }}">
+
+    <style>
+        /* Custom CSS to adjust the table width and column spacing */
+        table.dataTable {
+            width: 80%; /* Set the desired table width */
+            margin: 0 auto;
+            clear: both;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        table.dataTable thead th {
+            padding: 8px 15px;
+            border-bottom: 1px solid #111;
+        }
+
+        table.dataTable tbody td {
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table id="orderBookTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Bids</th>
+                    <th>Price</th>
+                    <th>Asks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in orderbook_data %}
+                <tr>
+                    <td>{{ data.bids }}</td>
+                    <td>{{ data.price }}</td>
+                    <td>{{ data.asks }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Include the jQuery and DataTables JS -->
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dataTables.bootstrap5.min.js') }}"></script>
+
+    <!-- Initialize the DataTable -->
+    <script>
+        $(document).ready(function() {
+            $('#orderBookTable').DataTable();
+        });
+    </script>
+</body>
+</html>
